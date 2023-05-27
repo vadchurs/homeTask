@@ -22,10 +22,12 @@
     border: none;
     color: white;
     font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .button:hover {
-
+    background-color: black;
 }
 .button:active {
 
