@@ -1,31 +1,48 @@
 .message {
-
+    position: relative;
+    margin-top: 20px;
 }
 
 .imageAndText {
-
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .imageAndText img {
-
+    width: 48px;
+    height: 48px;
+    margin-top: 15px;
 }
 
 .text {
-
+    background-color: #0066CC;
+    border-radius: 8px 8px 0 8px;
+    padding: 8px;
+    margin-right: 20px;
+    position: relative;
+    color: white;
 }
 
 .text:after {
-
+    position: absolute;
+    content: "";
+    display: block;
+    border-bottom: 20px solid #0066CC;
+    border-right: 20px solid transparent;
+    right: -19px;
+    bottom: 0;
 }
 
 .name {
-
+    font-weight: bold;
 }
 
 .messageText {
-
+    margin-top: 10px;
 }
 
 .time {
-
+    position: absolute;
+    right: 4px;
+    bottom: -22px;
 }

@@ -3,9 +3,15 @@
 }
 
 .hw {
-
+    width: 80%;
+    margin: 20px auto;
 }
 
 .hwTitle {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.messages {
 
 }
