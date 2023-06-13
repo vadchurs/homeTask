@@ -1,7 +1,4 @@
 .button {
-    font-weight: bold;
-    background-color: #0066CC;
-    color: white;
     padding: 5px 24px;
     border: none;
 }
@@ -18,7 +15,9 @@
 }
 
 .default {
-
+    font-weight: bold;
+    background-color: #0066CC;
+    color: white;
 }
 
 .red {
