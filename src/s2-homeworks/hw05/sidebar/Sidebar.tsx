@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {FC, useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
@@ -9,9 +9,19 @@ type PropsType = {
     handleClose: () => void
 }
 
+type FiltertValueType = "preJunior" | "junior" | "juniorPlus"
+
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
+
+    const [filterValue, setFilterValue] = useState<FiltertValueType>("preJunior")
+
+    const onclickHandler = (newFilterValue: FiltertValueType) => {
+        setFilterValue(newFilterValue)
+        handleClose()
+    }
+
     return (
         <>
             {/*затемнение справа от открытого меню*/}
@@ -30,7 +40,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
-                        onClick={handleClose}
+                        onClick={()=>onclickHandler("preJunior")}
+                        className={filterValue==="preJunior" ? s.active : ""}
                         // className={...} // делает студент
                     >
                         Pre-junior
@@ -38,7 +49,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
-                        onClick={handleClose}
+                        onClick={()=>onclickHandler("junior")}
+                        className={filterValue==="junior" ? s.active : ""}
                         // className={...} // делает студент
                     >
                         Junior
@@ -46,7 +58,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <NavLink
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
-                        onClick={handleClose}
+                        onClick={()=>onclickHandler("juniorPlus")}
+                        className={filterValue==="juniorPlus" ? s.active : ""}
                         // className={...} // делает студент
                     >
                         Junior Plus
